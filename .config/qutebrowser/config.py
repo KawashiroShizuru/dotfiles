@@ -23,7 +23,7 @@ else:
     term = 'kitty'
 
 c.editor.command = shlex.split(term) + \
-        ['nvim', '{file}', '-c', 'normal {line}G{column0}l']
+        ['vim', '{file}', '-c', 'normal {line}G{column0}l']
 
 fileChooser = shlex.split(term) + ['lf', '-selection-path={}']
 c.fileselect.handler = "external"
@@ -76,13 +76,6 @@ c.downloads.position = "bottom"
 
 c.content.fullscreen.window = True # Limit fullscreen to browser window
 c.content.autoplay = False
-c.content.blocking.enabled = True
-# c.content.blocking.method = 'both'
-c.content.blocking.adblock.lists = [
-  "https://easylist.to/easylist/easylist.txt",
-  "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
-  "https://easylist.to/easylist/easyprivacy.txt",
-  "https://secure.fanboy.co.nz/fanboy-annoyance.txt",]
 
 # privacy
 c.content.canvas_reading = False # breaks some sites, see `zcr` in `bindings.py`

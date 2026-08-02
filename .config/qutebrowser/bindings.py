@@ -1,9 +1,3 @@
-# vim:ft=python
-# @author nate zhou
-# @since 2025
-# source this file in config.py:
-# config.source('bindings.py')
-
 # unbind
 config.unbind('<Ctrl-v>')
 config.unbind('b')
@@ -15,21 +9,6 @@ config.bind('<Ctrl-Shift-v>', 'mode-enter passthrough')
 
 # normal mode
 config.bind('cs', 'config-source')
-
-config.bind('a', 'spawn ~/.local/bin/address --qutebrowser')
-config.bind('<Shift-a>', 'spawn ~/.local/bin/address -Q')
-
-config.bind('xd', 'spawn --userscript qute-dict')
-config.bind('xq', 'spawn --userscript qute-code')
-config.bind('xr', 'hint links userscript qute-rifle')
-config.bind('xt', 'spawn --userscript qute-title')
-config.bind('xv', 'spawn --userscript qute-vim')
-config.bind('xh', 'spawn --userscript qute-html')
-
-config.bind('xa', 'spawn --userscript qute-address -a')
-config.bind('xg', 'spawn --userscript qute-address -g')
-config.bind('xD', 'spawn --userscript qute-address -d')
-config.bind('xo', 'spawn --userscript qute-address -o')
 
 config.bind('zi', 'zoom-in')
 config.bind('zo', 'zoom-out')
@@ -75,8 +54,6 @@ config.bind('tg', 'tab-focus 1')
 config.bind('tG', 'tab-focus -1')
 
 config.bind('I', 'config-cycle colors.webpage.darkmode.enabled false true')
-
-config.bind('<Shift-u>', 'adblock-update')
 
 # insert mode
 config.bind('<Ctrl-e>', 'edit-text', mode='insert')
