@@ -6,4 +6,7 @@
 	sml/theme 'respectful)
   (sml/setup))
 
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode t)
+
 (provide 'init-ui)

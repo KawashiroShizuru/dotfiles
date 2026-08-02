@@ -1,3 +1,7 @@
+
+(setq default-buffer-file-coding-system 'utf-8)
+(setq gc-cons-threshold most-positive-fixnum)
+
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)

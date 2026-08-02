@@ -6,8 +6,8 @@
 
 config_version: 2
 settings:
+  content.canvas_reading:
+    global: false
   content.javascript.clipboard:
     https://chat.deepseek.com: access-paste
     https://github.com: access-paste
-  content.register_protocol_handler:
-    https://mail.google.com?extsrc=mailto&url=%25s: true
