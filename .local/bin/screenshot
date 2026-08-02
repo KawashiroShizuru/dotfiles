@@ -1,0 +1,25 @@
+#!/bin/bash
+SAVE_DIR=~/pic/scr
+mkdir -p "$SAVE_DIR"
+
+FILENAME="screenshot_$(date +%Y%m%d_%H%M%S).png"
+FILEPATH="$SAVE_DIR/$FILENAME"
+
+case "$1" in
+    area)
+        maim -s | tee "$FILEPATH" | xclip -selection clipboard -t image/png
+        notify-send "截图已保存" "📁 $FILENAME\n📋 已复制到剪贴板"
+        ;;
+    full)
+        maim | tee "$FILEPATH" | xclip -selection clipboard -t image/png
+        notify-send "截图已保存" "📁 $FILENAME\n📋 已复制到剪贴板"
+        ;;
+    window)
+        maim -u | tee "$FILEPATH" | xclip -selection clipboard -t image/png
+        notify-send "截图已保存" "📁 $FILENAME\n📋 已复制到剪贴板"
+        ;;
+    *)
+        echo "用法: screenshot {area|full|window}"
+        exit 1
+        ;;
+esac

@@ -1,0 +1,4 @@
+cd ..
+rm .emacs
+tree
+rm custom.el 
