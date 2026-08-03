@@ -11,24 +11,34 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/both
+~MSle0~/rifler
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1785650323,,"wq"
+|2,0,1785749039,,"wq"
 :q
-|2,0,1785650187,,"q"
+|2,0,1785748991,,"q"
+:zathu
+|2,0,1785748231,,"zathu"
 :w
-|2,0,1785587925,,"w"
+|2,0,1785661903,,"w"
 :q!
 |2,0,1785337662,,"q!"
 :q!!
 |2,0,1785326027,,"q!!"
 
 # Search String History (newest to oldest):
+?/rifler
+|2,1,1785748990,47,"rifler"
+?/zathura
+|2,1,1785748258,47,"zathura"
+?/zathur
+|2,1,1785748241,47,"zathur"
+?/lf
+|2,1,1785748213,47,"lf"
 ?/both
 |2,1,1785394003,47,"both"
 ?/adblo
@@ -103,265 +113,330 @@ $
 	# 输出结果给 qutebrowser
 |3,0,0,1,1,0,1785643109,"# 输出结果给 qutebrowser"
 ""1	LINE	0
-	(use-package emacs
-|3,1,1,1,1,0,1785650298,"(use-package emacs"
+	c.content.blocking.adblock.lists = [
+	  "https://easylist.to/easylist/easylist.txt",
+	  "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
+	  "https://easylist.to/easylist/easyprivacy.txt",
+	  "https://secure.fanboy.co.nz/fanboy-annoyance.txt",]
+|3,1,1,1,5,0,1785661930,"c.content.blocking.adblock.lists = [","  \"https://easylist.to/easylist/easylist.txt\",","  \"https://secure.fanboy.co.nz/fanboy-cookiemonster.txt\",","  \"https://easylist.to/easylist/easyprivacy.txt\",","  \"https://secure.fanboy.co.nz/fanboy-annoyance.txt\",]"
 "2	LINE	0
-	  :config(defalias 'yes-or-no-p 'y-or-n-p))
-|3,0,2,1,1,0,1785650296,"  :config(defalias 'yes-or-no-p 'y-or-n-p))"
+	# c.content.blocking.method = 'both'
+|3,0,2,1,1,0,1785661929,"# c.content.blocking.method = 'both'"
 "3	LINE	0
-	(require 'init-opencode)
-|3,0,3,1,1,0,1785648470,"(require 'init-opencode)"
+	c.content.blocking.enabled = True
+|3,0,3,1,1,0,1785661928,"c.content.blocking.enabled = True"
 "4	LINE	0
-	# 输出结果给 qutebrowser
-|3,0,4,1,1,0,1785635713,"# 输出结果给 qutebrowser"
-"5	LINE	0
-	# 单选检查：如果选了多个文件但要求单选，报错
-|3,0,5,1,1,0,1785635711,"# 单选检查：如果选了多个文件但要求单选，报错"
-"6	LINE	0
-	# 如果用户取消（文件为空），退出
-|3,0,6,1,1,0,1785635709,"# 如果用户取消（文件为空），退出"
-"7	LINE	0
-	# 启动 Kitty 并运行 lf
-|3,0,7,1,1,0,1785635708,"# 启动 Kitty 并运行 lf"
-"8	LINE	0
-	# qb-fileselect-lf.sh - qutebrowser 文件选择器
-|3,0,8,1,1,0,1785635706,"# qb-fileselect-lf.sh - qutebrowser 文件选择器"
-"9	LINE	0
-	# vim:ft=python
-	# qutebrowser/config.py
-	# @author nate zhou
-	# @since 2025,2026
+	config.bind('<Shift-u>', 'adblock-update')
 	
-|3,0,9,1,5,0,1785587893,"# vim:ft=python","# qutebrowser/config.py","# @author nate zhou","# @since 2025,2026",""
+|3,0,4,1,2,0,1785661865,"config.bind('<Shift-u>', 'adblock-update')",""
+"5	LINE	0
+	
+|3,0,5,1,1,0,1785661788,""
+"6	LINE	0
+	# vim:ft=python
+	# @author nate zhou
+	# @since 2025
+	# source this file in config.py:
+	# config.source('bindings.py')
+|3,0,6,1,5,0,1785661786,"# vim:ft=python","# @author nate zhou","# @since 2025","# source this file in config.py:","# config.source('bindings.py')"
+"7	LINE	0
+	
+|3,0,7,1,1,0,1785661780,""
+"8	LINE	0
+	config.bind('a', 'spawn ~/.local/bin/address --qutebrowser')
+	config.bind('<Shift-a>', 'spawn ~/.local/bin/address -Q')
+|3,0,8,1,2,0,1785661780,"config.bind('a', 'spawn ~/.local/bin/address --qutebrowser')","config.bind('<Shift-a>', 'spawn ~/.local/bin/address -Q')"
+"9	LINE	0
+	config.bind('xa', 'spawn --userscript qute-address -a')
+	config.bind('xg', 'spawn --userscript qute-address -g')
+	config.bind('xD', 'spawn --userscript qute-address -d')
+	config.bind('xo', 'spawn --userscript qute-address -o')
+	
+|3,0,9,1,5,0,1785661773,"config.bind('xa', 'spawn --userscript qute-address -a')","config.bind('xg', 'spawn --userscript qute-address -g')","config.bind('xD', 'spawn --userscript qute-address -d')","config.bind('xo', 'spawn --userscript qute-address -o')",""
 "-	CHAR	0
 	 
 |3,0,36,0,1,0,1785400408," "
 
 # File marks:
-'0  2  32  ~/doc/heart/.emacs.d/lisp/init-keyboard.el
-|4,48,2,32,1785650323,"~/doc/heart/.emacs.d/lisp/init-keyboard.el"
-'1  1  0  ~/.emacs.d/init.el
-|4,49,1,0,1785650187,"~/.emacs.d/init.el"
-'2  3  25  ~/.emacs.d/lisp/init-package.el
-|4,50,3,25,1785649706,"~/.emacs.d/lisp/init-package.el"
-'3  11  0  ~/.emacs.d/init.el
-|4,51,11,0,1785648472,"~/.emacs.d/init.el"
-'4  11  0  ~/.emacs.d/init.el
-|4,52,11,0,1785648472,"~/.emacs.d/init.el"
-'5  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,53,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
-'6  232  407  ~/doc/heart/LICENSE
-|4,54,232,407,1785646881,"~/doc/heart/LICENSE"
-'7  1  0  ~/doc/heart/README.md
-|4,55,1,0,1785646842,"~/doc/heart/README.md"
-'8  1  0  ~/doc/heart/README.md
-|4,56,1,0,1785646833,"~/doc/heart/README.md"
-'9  1  0  ~/doc/heart/README.md
-|4,57,1,0,1785646815,"~/doc/heart/README.md"
+'0  53  2  ~/doc/heart/.config/lf/lfrc
+|4,48,53,2,1785749039,"~/doc/heart/.config/lf/lfrc"
+'1  46  0  ~/doc/heart/.config/lf/lfrc
+|4,49,46,0,1785748991,"~/doc/heart/.config/lf/lfrc"
+'2  46  0  ~/doc/heart/.config/lf/lfrc
+|4,50,46,0,1785748991,"~/doc/heart/.config/lf/lfrc"
+'3  1  0  ~/doc/heart/.config/lf/lf-rearrange.sh
+|4,51,1,0,1785748439,"~/doc/heart/.config/lf/lf-rearrange.sh"
+'4  50  0  ~/doc/heart/.config/lf/scope.sh
+|4,52,50,0,1785748259,"~/doc/heart/.config/lf/scope.sh"
+'5  1  0  ~/doc/heart/.config/lf/local.conf
+|4,53,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+'6  1  0  ~/doc/heart/.config/lf/lfrc
+|4,54,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+'7  1  0  ~/doc/heart/.config/lf/lfrc
+|4,55,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+'8  1  0  ~/doc/heart/.config/lf/lfrc
+|4,56,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+'9  1  0  ~/doc/heart/.config/lf/lfrc
+|4,57,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
 
 # Jumplist (newest first):
--'  2  32  ~/doc/heart/.emacs.d/lisp/init-keyboard.el
-|4,39,2,32,1785650323,"~/doc/heart/.emacs.d/lisp/init-keyboard.el"
--'  1  0  ~/doc/heart/.emacs.d/lisp/init-keyboard.el
-|4,39,1,0,1785650230,"~/doc/heart/.emacs.d/lisp/init-keyboard.el"
--'  1  0  ~/.emacs.d/init.el
-|4,39,1,0,1785650187,"~/.emacs.d/init.el"
--'  1  0  ~/.emacs.d/init.el
-|4,39,1,0,1785650187,"~/.emacs.d/init.el"
--'  3  25  ~/.emacs.d/lisp/init-package.el
-|4,39,3,25,1785649706,"~/.emacs.d/lisp/init-package.el"
--'  3  25  ~/.emacs.d/lisp/init-package.el
-|4,39,3,25,1785649706,"~/.emacs.d/lisp/init-package.el"
--'  3  25  ~/.emacs.d/lisp/init-package.el
-|4,39,3,25,1785649706,"~/.emacs.d/lisp/init-package.el"
--'  3  25  ~/.emacs.d/lisp/init-package.el
-|4,39,3,25,1785649706,"~/.emacs.d/lisp/init-package.el"
--'  1  0  ~/.emacs.d/lisp/init-package.el
-|4,39,1,0,1785649698,"~/.emacs.d/lisp/init-package.el"
--'  1  0  ~/.emacs.d/lisp/init-package.el
-|4,39,1,0,1785649698,"~/.emacs.d/lisp/init-package.el"
--'  1  0  ~/.emacs.d/lisp/init-package.el
-|4,39,1,0,1785649698,"~/.emacs.d/lisp/init-package.el"
--'  1  0  ~/.emacs.d/lisp/init-package.el
-|4,39,1,0,1785649698,"~/.emacs.d/lisp/init-package.el"
--'  11  0  ~/.emacs.d/init.el
-|4,39,11,0,1785648472,"~/.emacs.d/init.el"
--'  11  0  ~/.emacs.d/init.el
-|4,39,11,0,1785648472,"~/.emacs.d/init.el"
--'  11  0  ~/.emacs.d/init.el
-|4,39,11,0,1785648472,"~/.emacs.d/init.el"
--'  11  0  ~/.emacs.d/init.el
-|4,39,11,0,1785648472,"~/.emacs.d/init.el"
--'  11  0  ~/.emacs.d/init.el
-|4,39,11,0,1785648472,"~/.emacs.d/init.el"
--'  11  0  ~/.emacs.d/init.el
-|4,39,11,0,1785648472,"~/.emacs.d/init.el"
--'  1  0  ~/.emacs.d/init.el
-|4,39,1,0,1785648468,"~/.emacs.d/init.el"
--'  1  0  ~/.emacs.d/init.el
-|4,39,1,0,1785648468,"~/.emacs.d/init.el"
--'  1  0  ~/.emacs.d/init.el
-|4,39,1,0,1785648468,"~/.emacs.d/init.el"
--'  1  0  ~/.emacs.d/init.el
-|4,39,1,0,1785648468,"~/.emacs.d/init.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  1  0  ~/.emacs.d/lisp/init-startup.el
-|4,39,1,0,1785648174,"~/.emacs.d/lisp/init-startup.el"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  232  407  ~/doc/heart/LICENSE
-|4,39,232,407,1785646881,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
--'  1  0  ~/doc/heart/LICENSE
-|4,39,1,0,1785646859,"~/doc/heart/LICENSE"
+-'  53  2  ~/doc/heart/.config/lf/lfrc
+|4,39,53,2,1785749039,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/lfrc
+|4,39,1,0,1785749034,"~/doc/heart/.config/lf/lfrc"
+-'  46  0  ~/doc/heart/.config/lf/lfrc
+|4,39,46,0,1785748991,"~/doc/heart/.config/lf/lfrc"
+-'  46  0  ~/doc/heart/.config/lf/lfrc
+|4,39,46,0,1785748991,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/lfrc
+|4,39,1,0,1785748959,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/lf-rearrange.sh
+|4,39,1,0,1785748439,"~/doc/heart/.config/lf/lf-rearrange.sh"
+-'  1  0  ~/doc/heart/.config/lf/lf-rearrange.sh
+|4,39,1,0,1785748439,"~/doc/heart/.config/lf/lf-rearrange.sh"
+-'  1  0  ~/doc/heart/.config/lf/lf-rearrange.sh
+|4,39,1,0,1785748439,"~/doc/heart/.config/lf/lf-rearrange.sh"
+-'  1  0  ~/doc/heart/.config/lf/lf-rearrange.sh
+|4,39,1,0,1785748439,"~/doc/heart/.config/lf/lf-rearrange.sh"
+-'  50  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,50,0,1785748259,"~/doc/heart/.config/lf/scope.sh"
+-'  50  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,50,0,1785748259,"~/doc/heart/.config/lf/scope.sh"
+-'  50  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,50,0,1785748259,"~/doc/heart/.config/lf/scope.sh"
+-'  50  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,50,0,1785748259,"~/doc/heart/.config/lf/scope.sh"
+-'  50  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,50,0,1785748259,"~/doc/heart/.config/lf/scope.sh"
+-'  50  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,50,0,1785748259,"~/doc/heart/.config/lf/scope.sh"
+-'  50  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,50,0,1785748259,"~/doc/heart/.config/lf/scope.sh"
+-'  50  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,50,0,1785748259,"~/doc/heart/.config/lf/scope.sh"
+-'  1  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,1,0,1785748249,"~/doc/heart/.config/lf/scope.sh"
+-'  1  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,1,0,1785748249,"~/doc/heart/.config/lf/scope.sh"
+-'  1  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,1,0,1785748249,"~/doc/heart/.config/lf/scope.sh"
+-'  1  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,1,0,1785748249,"~/doc/heart/.config/lf/scope.sh"
+-'  1  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,1,0,1785748249,"~/doc/heart/.config/lf/scope.sh"
+-'  1  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,1,0,1785748249,"~/doc/heart/.config/lf/scope.sh"
+-'  1  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,1,0,1785748249,"~/doc/heart/.config/lf/scope.sh"
+-'  1  0  ~/doc/heart/.config/lf/scope.sh
+|4,39,1,0,1785748249,"~/doc/heart/.config/lf/scope.sh"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/local.conf
+|4,39,1,0,1785748246,"~/doc/heart/.config/lf/local.conf"
+-'  1  0  ~/doc/heart/.config/lf/lfrc
+|4,39,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/lfrc
+|4,39,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/lfrc
+|4,39,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/lfrc
+|4,39,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/lfrc
+|4,39,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/lfrc
+|4,39,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/lfrc
+|4,39,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/lfrc
+|4,39,1,0,1785748242,"~/doc/heart/.config/lf/lfrc"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
+-'  1  0  ~/doc/heart/.config/lf/commands.conf
+|4,39,1,0,1785748232,"~/doc/heart/.config/lf/commands.conf"
 
 # History of marks within files (newest to oldest):
+
+> ~/doc/heart/.config/lf/lfrc
+	*	1785749038	0
+	"	53	2
+	^	53	3
+	.	53	2
+	+	53	2
+
+> ~/doc/heart/.config/lf/lf-rearrange.sh
+	*	1785748436	0
+	"	1	0
+
+> ~/doc/heart/.config/lf/scope.sh
+	*	1785748258	0
+	"	50	0
+
+> ~/doc/heart/.config/lf/local.conf
+	*	1785748245	0
+	"	1	0
+
+> ~/doc/heart/.config/lf/commands.conf
+	*	1785748231	0
+	"	1	0
+
+> ~/doc/heart/.config/lf/bindings.conf
+	*	1785748223	0
+	"	52	17
+
+> ~/dev/illustrations/LICENSE
+	*	1785662250	0
+	"	117	22
+	^	117	23
+	.	117	22
+	+	117	22
+
+> ~/doc/heart/.config/qutebrowser/config.py
+	*	1785661936	0
+	"	76	0
+	^	26	10
+	.	79	0
+	+	26	10
+	+	79	0
+
+> ~/doc/heart/.config/qutebrowser/colors.py
+	*	1785661873	0
+	"	1	0
+
+> ~/doc/heart/.config/qutebrowser/bindings.py
+	*	1785661869	0
+	"	63	0
+	.	58	0
+	+	13	0
+	+	12	0
+	+	1	0
+	+	58	0
 
 > ~/doc/heart/.emacs.d/lisp/init-keyboard.el
 	*	1785650322	0
@@ -945,55 +1020,4 @@ $
 
 > ~/doc/unixchad-dotfiles/.config/bat/config
 	*	1785325970	0
-	"	1	0
-
-> ~/doc/unixchad-dotfiles/.config/bash/functions.bash
-	*	1785325961	0
-	"	1	0
-
-> ~/doc/unixchad-dotfiles/.config/bash/aliases.bash
-	*	1785325947	0
-	"	1	0
-
-> ~/doc/unixchad-dotfiles/.config/autorandr/t14-DP-1/config
-	*	1785325940	0
-	"	1	0
-
-> ~/doc/unixchad-dotfiles/.config/autorandr/t14-DP-1/setup
-	*	1785325938	0
-	"	1	0
-
-> ~/.config/lf/teleport.conf
-	*	1785325571	0
-	"	44	0
-
-> ~/.config/lf/lf-rearrange.sh
-	*	1785325453	0
-	"	1	0
-
-> ~/.Xresources
-	*	1785325255	0
-	"	1	0
-	^	2	9
-	.	2	8
-	+	2	24
-	+	1	24
-	+	2	8
-
-> ~/.local/bin/qb-fireselect-lf.sh
-	*	1785324243	0
-	"	1	0
-	^	29	16
-	.	29	15
-	+	29	15
-
-> ~/.config/vim/vimrc
-	*	1785322753	0
-	"	1	0
-	^	44	7
-	.	44	0
-	+	44	0
-
-> ~/doc/unixchad-dotfiles/LICENSE
-	*	1785322574	0
 	"	1	0
